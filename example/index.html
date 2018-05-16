@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Cookie Choices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+	
+	<div class="container py-5">
+		<h1>Simple Cookie Choices</h1>
+		<p>This site uses cookies to offer you a better browsing expirience.</p>
+		<div class="custom-control custom-radio custom-control-inline">
+			<input type="radio" id="radioAccept" name="radioChoices" class="custom-control-input" onclick="SimpleCookieChoices.setAccept()">
+			<label class="custom-control-label" for="radioAccept">I accept cookies</label>
+		</div>
+		<div class="custom-control custom-radio custom-control-inline">
+			<input type="radio" id="radioRefuse" name="radioChoices" class="custom-control-input" onclick="SimpleCookieChoices.setReject()">
+			<label class="custom-control-label" for="radioRefuse">I refuse cookies</label>
+		</div>
+
+		<div class="inline my-5">
+			<button type="button" class="btn btn-secondary" onclick="SimpleCookieChoices.eraseCookies()">Clear cookie</button>
+			<a href="other-page.html" class="btn btn-primary">Go to Other Page</a>
+		</div>
+	</div>
+
+	<script src="../simple-cookie-choices.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(event) {
+
+			SimpleCookieChoices.showCookieConsentBar('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', '/cookie-policy.html', 'I accept cookies', 'I refuse cookies');
+
+			// Listen to your custom event
+			window.addEventListener('cookiechoicetatechanged', function (e) {
+				if(e.detail){
+					document.getElementById('radioAccept').checked = true;
+				}else if(e.detail == false){
+					document.getElementById('radioRefuse').checked = true;
+				}else{
+					document.getElementById('radioAccept').checked = null;
+					document.getElementById('radioRefuse').checked = null;
+				}
+				console.log('Choice Changed:', e.detail);
+			});
+
+			// Verify Initial State
+			if(SimpleCookieChoices.consentAccepted()){
+				document.getElementById('radioAccept').checked = true;
+			}else if(SimpleCookieChoices.consentAccepted() == false){
+				document.getElementById('radioRefuse').checked = true;
+			}
+
+		});
+	</script>
+</body>
+</html>
