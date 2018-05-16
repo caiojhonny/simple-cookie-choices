@@ -3,6 +3,13 @@
 
 This plugin helps you to create a banner or dialog box for accepting or denying the terms based on the [GDPR](https://www.eugdpr.org/) rules.
 
+## Demo
+
+[Consent Bar](https://simple-cookie-choices.caiojhonny.com/)
+
+[Consent Dialog](https://simple-cookie-choices.caiojhonny.com/dialog.html)
+
+
 ## Setup
 
 Include the script into your site
