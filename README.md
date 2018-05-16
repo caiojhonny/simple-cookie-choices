@@ -20,21 +20,21 @@ Include the script into your site
 
 ## Usage
 
-If you want a Consent Bar, using this for init:
+To use a Consent Bar
 
 ```javascript
 SimpleCookieChoices.showCookieConsentBar('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', '/cookie-policy.html', 'I accept cookies', 'I refuse cookies');
 ```
 
-If you want a Dialog Bar, using this for init:
+To use a Dialog Bar
 
 ```javascript
 SimpleCookieChoices.showCookieConsentDialog('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', '/cookie-policy.html', 'I accept cookies', 'I refuse cookies');
 ```
 
-## Params
+## Parameters
 
-Parameters for plugin initialization
+Necessary parameters for the initialization of the plugin:
 
 ```cookieText``` Brief descriptive text about your privacy policy
 
