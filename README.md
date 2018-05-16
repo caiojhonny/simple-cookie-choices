@@ -3,6 +3,13 @@
 
 This plugin helps you to create a banner or dialog box for accepting or denying the terms based on the [GDPR](https://www.eugdpr.org/) rules.
 
+## Demo
+
+[Consent Bar](https://simple-cookie-choices.caiojhonny.com/)
+
+[Consent Dialog](https://simple-cookie-choices.caiojhonny.com/dialog.html)
+
+
 ## Setup
 
 Include the script into your site
@@ -15,17 +22,19 @@ Include the script into your site
 
 If you want a Consent Bar, using this for init:
 
-```html
+```javascript
 SimpleCookieChoices.showCookieConsentBar('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', '/cookie-policy.html', 'I accept cookies', 'I refuse cookies');
 ```
 
 If you want a Dialog Bar, using this for init:
 
-```html
+```javascript
 SimpleCookieChoices.showCookieConsentDialog('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', '/cookie-policy.html', 'I accept cookies', 'I refuse cookies');
 ```
 
 ## Params
+
+Parameters for plugin initialization
 
 ```cookieText``` Brief descriptive text about your privacy policy
 
@@ -39,7 +48,7 @@ SimpleCookieChoices.showCookieConsentDialog('This site uses cookies to offer you
 
 ## Functions
 
-```SimpleCookieChoices.consentAccepted()```(boolean) Returns if consensus was accepted 
+```SimpleCookieChoices.consentAccepted()``` Returns a boolean value if consensus was accepted 
 
 ```SimpleCookieChoices.setAccept()``` Action to accept the terms
 
@@ -47,16 +56,16 @@ SimpleCookieChoices.showCookieConsentDialog('This site uses cookies to offer you
 
 ```SimpleCookieChoices.eraseCookies()``` Clear the plugin cookies
 
-```SimpleCookieChoices.showCookieConsentBar()``` To init a Consent Bar
+```SimpleCookieChoices.showCookieConsentBar()``` To init a Consent Bar (params required)
 
-```SimpleCookieChoices.showCookieConsentDialog()``` To init a Dialog Bar
+```SimpleCookieChoices.showCookieConsentDialog()``` To init a Dialog Bar (params required)
 
 
 ## Events
 
-You can tell if the user has changed the option with the event ```cookiechoicetatechanged```
+```cookiechoicetatechanged``` You can see if the user has changed option
 
-```
+```javascript
 window.addEventListener('cookiechoicetatechanged', function (e) {
   console.log('Choice state changed', e.detail);
 });
@@ -64,6 +73,6 @@ window.addEventListener('cookiechoicetatechanged', function (e) {
 
 ## License
 
-MIT | [@caiojhonny](https://github.com/caiojhonny/)
+MIT
 
 \[[top](#simple-cookie-choices)\]
