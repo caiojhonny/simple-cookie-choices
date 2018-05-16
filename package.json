@@ -1,0 +1,10 @@
+{
+  "name": "simple-cookie-choices",
+  "version": "1.0.0",
+  "description": "Simple banner / bar for accepting or denying cookie policies",
+  "main": "index.js",
+  "repository": "https://github.com/caiojhonny/simple-cookie-choices",
+  "author": "Caio Jhonny",
+  "license": "MIT",
+  "private": false
+}
