@@ -5,7 +5,7 @@ This plugin helps you to create a banner or dialog box for accepting or denying 
 
 ## Setup
 
-Include the script located on the `dist` folder
+Include the script into your site
 
 ```html
 <script src="simple-cookie-choices.min.js"></script>
