@@ -63,7 +63,7 @@ Necessary parameters for the initialization of the plugin:
 
 ## Events
 
-```cookiechoicetatechanged``` You can see if the user has changed option
+```cookiechoicestatechanged``` You can see if the user has changed option
 
 ```javascript
 window.addEventListener('cookiechoicestatechanged', function (e) {
