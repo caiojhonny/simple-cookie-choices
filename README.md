@@ -1,5 +1,5 @@
 # Simple Cookie Choices
-> Javascript only. Just 3kb gzipped.
+> Javascript only. Just 3.3kb gzipped.
 
 This plugin helps you to create a banner or dialog box for accepting or denying the terms based on the [GDPR](https://www.eugdpr.org/) rules.
 
@@ -66,7 +66,7 @@ Necessary parameters for the initialization of the plugin:
 ```cookiechoicetatechanged``` You can see if the user has changed option
 
 ```javascript
-window.addEventListener('cookiechoicetatechanged', function (e) {
+window.addEventListener('cookiechoicestatechanged', function (e) {
   console.log('Choice state changed', e.detail);
 });
 ```

@@ -18,7 +18,7 @@
     var isAccepted = false;
 
     function _onIsAcceptedStateChanged(value) {
-      var evt = new CustomEvent('cookiechoicetatechanged', { detail: value });
+      var evt = new CustomEvent('cookiechoicestatechanged', { detail: value });
 
       window.dispatchEvent(evt);
     }
