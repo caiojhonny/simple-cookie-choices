@@ -39,7 +39,7 @@
 			SimpleCookieChoices.showCookieConsentBar('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', '/cookie-policy.html', 'I accept cookies', 'I refuse cookies');
 
 			// Listen to your custom event
-			window.addEventListener('cookiechoicetatechanged', function (e) {
+			window.addEventListener('cookiechoicestatechanged', function (e) {
 				if(e.detail){
 					document.getElementById('radioAccept').checked = true;
 				}else if(e.detail == false){
