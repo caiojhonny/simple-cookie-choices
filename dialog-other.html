@@ -16,6 +16,11 @@
 	<div class="container py-5">
 		<h1>Other Page using Dialog</h1>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+		
+		<hr>
+		<h2>Cookies settings</h2>
+		<p>Manage how your browser uses cookies or sends data to services like Google Analytics</p>
+
 		<div class="custom-control custom-radio custom-control-inline">
 			<input type="radio" id="radioAccept" name="radioChoices" class="custom-control-input" onclick="SimpleCookieChoices.setAccept()">
 			<label class="custom-control-label" for="radioAccept">I accept cookies</label>
@@ -36,19 +41,19 @@
 		document.addEventListener('DOMContentLoaded', function(event) {
 
 			// Init consent bar
-			SimpleCookieChoices.showCookieConsentDialog('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', '/cookie-policy.html', 'I accept cookies', 'I refuse cookies');
+			SimpleCookieChoices.showCookieConsentDialog('This site uses cookies to offer you a better browsing expirience.', 'Find out more on how we use cookies and how you can change your settings', 'cookie-policy.html', 'I accept cookies', 'I refuse cookies');
 
 			// Listen to your custom event
 			window.addEventListener('cookiechoicestatechanged', function (e) {
-				if(e.detail){
+				if(e.detail.state){
 					document.getElementById('radioAccept').checked = true;
-				}else if(e.detail == false){
+				}else if(e.detail.state == false){
 					document.getElementById('radioRefuse').checked = true;
 				}else{
 					document.getElementById('radioAccept').checked = null;
 					document.getElementById('radioRefuse').checked = null;
 				}
-				console.log('Choice state changed', e.detail);
+				console.log('Choice state changed', e.detail.state);
 			});
 
 			// Initial state

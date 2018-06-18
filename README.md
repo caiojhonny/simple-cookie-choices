@@ -67,7 +67,7 @@ Necessary parameters for the initialization of the plugin:
 
 ```javascript
 window.addEventListener('cookiechoicestatechanged', function (e) {
-  console.log('Choice state changed', e.detail);
+  console.log('Choice state changed', e.detail.state);
 });
 ```
 
