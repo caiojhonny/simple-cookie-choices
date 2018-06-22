@@ -110,7 +110,7 @@
 
     function _createConsentText(cookieText) {
       var consentText = document.createElement("span");
-      _setElementText(consentText, cookieText);
+      _setElementText(consentText, cookieText + " ");
       return consentText;
     }
 
@@ -136,7 +136,7 @@
 
     function _createInformationLink(linkText, linkHref) {
       var infoLink = document.createElement("a");
-      _setElementText(infoLink, " "+linkText);
+      _setElementText(infoLink, linkText);
       infoLink.href = linkHref;
       infoLink.display = "inline-block";
       return infoLink;
